@@ -1,0 +1,91 @@
+/* General del carrusel */
+.carrusel-section {
+    margin: 40px auto;
+    text-align: center;
+    max-width: 1200px; /* Mayor ancho */
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+.carrusel-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Recuadro del carrusel */
+.carrusel-container {
+    border: 4px solid #000; /* Borde negro */
+    padding: 20px;
+    border-radius: 12px; /* Bordes redondeados */
+    position: relative;
+    background: linear-gradient(180deg, #000 85%, #c8102e); /* Detalle de River: rojo y negro */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Oculta las entrevistas fuera del recuadro */
+}
+
+/* Botones del carrusel */
+.carrusel-btn {
+    background-color: #c8102e; /* Rojo River */
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.carrusel-btn:hover {
+    background-color: #000;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Pista y diapositivas */
+.carrusel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Transición suave */
+    overflow: hidden; /* Oculta lo que sale de la pista visible */
+    gap: 15px;
+}
+
+.carrusel-slide {
+    min-width: 20%; /* Muestra 4 elementos */
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f4f4f4; /* Fondo claro para las diapositivas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.carrusel-slide:hover {
+    transform: scale(1.05); /* Efecto al pasar el mouse */
+}
+
+.carrusel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 3px solid #c8102e; /* Línea roja debajo de la imagen */
+}
+
+/* Texto de cada diapositiva */
+.carrusel-texto {
+    font-size: 14px;
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+}

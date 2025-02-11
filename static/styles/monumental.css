@@ -1,0 +1,44 @@
+/* Hero section with Monumental image as background */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Ajustamos la altura del fondo */
+    overflow: hidden;
+}
+
+.imagen-monumental {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.imagen-monumental img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.btn-ver-estadio {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-ver-estadio:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0.9;
+}

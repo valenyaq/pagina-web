@@ -1,0 +1,75 @@
+/* Para noticias personalizadas */
+.noticias-personalizadas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.noticia-personalizada {
+    position: relative;
+    overflow: hidden;
+}
+
+.noticia-personalizada-contenedor {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.noticia-personalizada img {
+    width: 100%;
+    display: block;
+}
+
+/* Texto sobre la imagen (para noticias grandes y medianas) */
+.noticia-personalizada-texto {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    display: inline;
+    width: 100%;
+}
+
+.noticia-personalizada.grande .noticia-personalizada-texto {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.noticia-personalizada.grande {
+    width: 100%;
+    max-width: 600px; /* No hay límite de ancho para la noticia grande */
+}
+
+/* Nuevas clases para mediana y pequeña para evitar interferencias */
+.noticia-personalizada-mediana {
+    width: 100%;
+    max-width: 450px;
+}
+
+.noticia-personalizada-pequena {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Noticias pequeñas con texto debajo en recuadro negro */
+.noticia-custom-texto-bloque {
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 20px;
+    min-height: 400px; /* Ajusta este valor para más altura */
+}

@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main>
+    <section class="hero">
+        <img src="{{ url_for('static', filename='images/monumental.jfif') }}" alt="Estadio Monumental lleno" class="imagen-monumental">
+        <a href="https://www.cariverplate.com.ar/futuro-monumental/" class="btn-ver-estadio">Ver Estadio</a>
+    </section>
+    
+    <section class="noticias">
+        <div class="fila-noticias">
+            <article class="noticia">
+                <div class="imagen-contenedor">
+                    <img src="{{ url_for('static', filename='images/noti1.webp') }}" alt="Noticia 1">
+                    <h3>Título Noticia 1</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam laudantium doloribus dolor nostrum vero architecto ducimus officiis obcaecati similique totam quam saepe necessitatibus eos assumenda nam, nihil excepturi fugit.</p>
+            </article>
+            <article class="noticia">
+                <div class="imagen-contenedor">
+                    <img src="{{ url_for('static', filename='images/gallardo.webp') }}" alt="Noticia 1">
+                    <h3>Título Noticia 1</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam laudantium doloribus dolor nostrum vero architecto ducimus officiis obcaecati similique totam quam saepe necessitatibus eos assumenda nam, nihil excepturi fugit.</p>
+            </article>
+            <article class="noticia">
+                <div class="imagen-contenedor">
+                    <img src="{{ url_for('static', filename='images/montiel.webp') }}" alt="Noticia 1">
+                    <h3>Título Noticia 1</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam laudantium doloribus dolor nostrum vero architecto ducimus officiis obcaecati similique totam quam saepe necessitatibus eos assumenda nam, nihil excepturi fugit.</p>
+            </article>
+        </div>
+
+        <!-- Próximos Partidos -->
+        <section class="proximos-partidos">
+            <h2>Próximos Partidos</h2>
+            <div class="partido">
+                <div class="partido-info">
+                    <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate" class="escudo-peq">
+                    <span>River Plate vs Boca Juniors</span>
+                    <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors" class="escudo-peq">
+                </div>
+                <div class="partido-horario-lugar">
+                    <span>Domingo 20:00 - Monumental</span>
+                </div>
+            </div>
+            <div class="partido">
+                <div class="partido-info">
+                    <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate" class="escudo-peq">
+                    <span>River Plate vs Racing</span>
+                    <img src="{{ url_for('static', filename='images/river.png') }}" alt="Racing Club" class="escudo-peq">
+                </div>
+                <div class="partido-horario-lugar">
+                    <span>Miércoles 21:30 - Cilindro</span>
+                </div>
+            </div>
+            <div class="partido">
+                <div class="partido-info">
+                    <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate" class="escudo-peq">
+                    <span>River Plate vs Independiente</span>
+                    <img src="{{ url_for('static', filename='images/independiente.png') }}" alt="Independiente" class="escudo-peq">
+                </div>
+                <div class="partido-horario-lugar">
+                    <span>Sábado 18:00 - Monumental</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="fila-noticias">
+            <article class="noticia">
+                <div class="imagen-contenedor">
+                    <img src="{{ url_for('static', filename='images/noti4.webp') }}" alt="Noticia 4">
+                    <h3>Título Noticia 4</h3>
+                </div>
+                <p>Resumen breve...</p>
+            </article>
+            <article class="noticia">
+                <div class="imagen-contenedor">
+                    <img src="{{ url_for('static', filename='images/equipo.webp') }}" alt="Noticia 1">
+                    <h3>Título Noticia 1</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam laudantium doloribus dolor nostrum vero architecto ducimus officiis obcaecati similique totam quam saepe necessitatibus eos assumenda nam, nihil excepturi fugit.</p>
+            </article>
+            <article class="noticia">
+                <div class="imagen-contenedor">
+                    <img src="{{ url_for('static', filename='images/colidio.webp') }}" alt="Noticia 1">
+                    <h3>Título Noticia 1</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam laudantium doloribus dolor nostrum vero architecto ducimus officiis obcaecati similique totam quam saepe necessitatibus eos assumenda nam, nihil excepturi fugit.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="noticias-diferentes">
+        <h2>Últimas Noticias</h2>
+        <div class="noticias-grid-diferentes">
+            <!-- Contenedor de la noticia grande y las pequeñas -->
+            <div class="noticias-grande">
+                <!-- Noticia 1 - Grande (ocupa 2 columnas) -->
+                <div class="noticia-diferente grande">
+                    <div class="imagen-contenedor-diferente">
+                        <img src="{{ url_for('static', filename='images/noti8.webp') }}" alt="noticia 1">
+                    </div>
+                    <h3>Gran victoria de River en el Monumental</h3>
+                    <p>River Plate ha conseguido una victoria contundente en su estadio, con goles de varios jugadores clave.</p>
+                </div>
+            </div>
+    
+            <!-- Contenedor de las 3 noticias pequeñas al lado de la noticia grande -->
+            <div class="noticias-pequenas">
+                <!-- Noticia 2 - Pequeña con texto al lado -->
+                <div class="noticia-diferente pequena">
+                    <div class="imagen-contenedor-diferente">
+                        <img src="{{ url_for('static', filename='images/noti7.webp') }}" alt="noticia 2">
+                    </div>
+                    <div class="contenido-texto">
+                        <h3>El sueño de la Copa Libertadores sigue vivo</h3>
+                        <p>El equipo sigue avanzando en la Copa, con una actuación destacada de su capitán.</p>
+                    </div>
+                </div>
+    
+                <!-- Noticia 3 - Pequeña con texto al lado -->
+                <div class="noticia-diferente pequena">
+                    <div class="imagen-contenedor-diferente">
+                        <img src="{{ url_for('static', filename='images/noti6.webp') }}" alt="noticia 3">
+                    </div>
+                    <div class="contenido-texto">
+                        <h3>El partido más esperado del año</h3>
+                        <p>Este fin de semana se enfrentan dos de los equipos más fuertes del torneo. No te lo pierdas.</p>
+                    </div>
+                </div>
+    
+                <!-- Noticia 4 - Pequeña con texto al lado -->
+                <div class="noticia-diferente pequena">
+                    <div class="imagen-contenedor-diferente">
+                        <img src="{{ url_for('static', filename='images/noti5.webp') }}" alt="noticia 4">
+                    </div>
+                    <div class="contenido-texto">
+                        <h3>La Copa Argentina promete sorpresas</h3>
+                        <p>El sorteo de los nuevos cruces deja muchas sorpresas y emoción para los hinchas.</p>
+                    </div>
+                </div>
+
+                <div class="noticia-diferente pequena">
+                    <div class="imagen-contenedor-diferente">
+                        <img src="{{ url_for('static', filename='images/noti5.webp') }}" alt="noticia 4">
+                    </div>
+                    <div class="contenido-texto">
+                        <h3>La Copa Argentina promete sorpresas</h3>
+                        <p>El sorteo de los nuevos cruces deja muchas sorpresas y emoción para los hinchas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="carrusel-section">
+        <h2 class="carrusel-title">Entrevistas Destacadas</h2>
+        <div class="carrusel-container">
+            <div class="carrusel">
+                <button class="carrusel-btn prev-btn">&lt;</button>
+                <div class="carrusel-track">
+                    <div class="carrusel-slide">
+                        <img src="{{ url_for('static', filename='images/noti11.webp') }}" alt="Entrevista 1">
+                        <p class="carrusel-texto">Entrevista a Enzo Pérez: "El amor por River no tiene comparación".</p>
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="{{ url_for('static', filename='images/noti8.webp') }}" alt="Entrevista 2">
+                        <p class="carrusel-texto">Gallardo reflexiona sobre su legado en el club.</p>
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="{{ url_for('static', filename='images/noti3.webp') }}" alt="Entrevista 3">
+                        <p class="carrusel-texto">Franco Armani: "El Monumental es mi fortaleza".</p>
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="{{ url_for('static', filename='images/noti7.webp') }}" alt="Entrevista 4">
+                        <p class="carrusel-texto">El juvenil Beltrán y sus sueños en River Plate.</p>
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="{{ url_for('static', filename='images/noti6.webp') }}" alt="Entrevista 5">
+                        <p class="carrusel-texto">El Monumental renovado: detalles exclusivos.</p>
+                    </div>
+                </div>
+                <button class="carrusel-btn next-btn">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="noticias-personalizadas">
+        <article class="noticia-personalizada grande"> 
+            <div class="noticia-personalizada-contenedor">
+                <img src="{{ url_for('static', filename='images/noti1.webp') }}" alt="Noticia 1">
+                <div class="noticia-personalizada-texto">
+                    <p>River se impone en el Superclásico con un gol en los minutos finales.</p>
+                </div>
+            </div>
+        </article>
+    
+        <article class="noticia-personalizada noticia-personalizada-mediana">
+            <div class="noticia-personalizada-contenedor">
+                <img src="{{ url_for('static', filename='images/noti10.webp') }}" alt="Noticia 2">
+                <div class="noticia-personalizada-texto">
+                    <p>El DT sorprendió en el entrenamiento con una formación inédita.</p>
+                </div>
+            </div>
+        </article>
+    
+        <article class="noticia-personalizada noticia-personalizada-pequena">
+            <img src="{{ url_for('static', filename='images/noti4.webp') }}" alt="Noticia 3">
+            <div class="noticia-custom-texto-bloque">
+                <h3>Entradas agotadas</h3>
+                <p>El hincha de River llenará el Monumental una vez más.</p>
+            </div>
+        </article>
+    
+        <article class="noticia-personalizada grande"> 
+            <div class="noticia-personalizada-contenedor">
+                <img src="{{ url_for('static', filename='images/noti1.webp') }}" alt="Noticia 1">
+                <div class="noticia-personalizada-texto">
+                    <p>River se impone en el Superclásico con un gol en los minutos finales.</p>
+                </div>
+            </div>
+        </article>
+    
+        <article class="noticia-personalizada noticia-personalizada-mediana">
+            <div class="noticia-personalizada-contenedor">
+                <img src="{{ url_for('static', filename='images/noti10.webp') }}" alt="Noticia 2">
+                <div class="noticia-personalizada-texto">
+                    <p>El DT sorprendió en el entrenamiento con una formación inédita.</p>
+                </div>
+            </div>
+        </article>
+    
+        <article class="noticia-personalizada noticia-personalizada-pequena">
+            <img src="{{ url_for('static', filename='images/noti4.webp') }}" alt="Noticia 3">
+            <div class="noticia-custom-texto-bloque">
+                <h3>Entradas agotadas</h3>
+                <p>El hincha de River llenará el Monumental una vez más.</p>
+            </div>
+        </article>
+    </section>
+</main>
+
+
+{% endblock %}

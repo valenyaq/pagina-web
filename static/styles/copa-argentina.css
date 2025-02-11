@@ -1,0 +1,120 @@
+/* Estilo para el contenedor del título y el logo */
+/* Estilo para el contenedor del título y el logo */
+.abc-123 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    background-color: #222;
+    height: 300px; /* Altura de 300px */
+    color: #fff; /* Fuente blanca */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    padding-left: 20px; /* Espaciado a la izquierda */
+    padding-right: 20px; /* Espaciado a la derecha */
+}
+
+.xyz-789 {
+    width: 50px; /* Tamaño del logo de la Copa Argentina */
+    height: auto;
+}
+
+.abc-123 h2 {
+    font-size: 2rem; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    margin: 0;
+    color: #fff; /* Asegurando que el color del título sea blanco */
+}
+
+
+
+
+/* Contenedor principal que incluye partidos y noticias */
+.cp-arg-container {
+    display: flex;
+    gap: 30px; /* Espacio entre los partidos y las noticias */
+    flex-wrap: wrap;
+}
+
+/* Contenedor de partidos */
+.prt-ctr-456 {
+    display: block; /* Los partidos estarán uno debajo del otro */
+    gap: 20px; /* Espacio entre partidos */
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Cada partido */
+.prt-789 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px; /* Mantener el padding para el ancho */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 50px; /* Hacer más bajo */
+    width: 100%;
+    max-width: 900px; /* Mantener el ancho de antes */
+    margin-bottom: 15px; /* Añadir un espacio entre los partidos */
+}
+
+/* Equipos */
+.eq-abc-111, .eq-xyz-444 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logos de los equipos */
+.logo-eq-222 {
+    width: 25px; /* Logo más pequeño */
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/* Resultado */
+.rst-def-333 {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Noticias pequeñas */
+.not-peq-555 {
+    width: 300px; /* Ajustar el tamaño de la columna de noticias */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.not-peq-555 h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Cada noticia */
+.not-666 {
+    display: flex;
+    gap: 15px; /* Espacio entre imagen y texto */
+    align-items: center; /* Centra la imagen y el texto */
+}
+
+.not-img-777 {
+    width: 100px; /* Imagen pequeña */
+    height: 100px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.not-img-777 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.not-666 p {
+    font-size: 0.9rem;
+    color: #555;
+    flex: 1; /* Para que el texto ocupe el espacio restante */
+}

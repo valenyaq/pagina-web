@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}River Plate{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/tablaDePosiciones.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/carrusel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/noticias-diferentes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/noticias2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/monumental.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/noticias1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/proximos-partidos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/copa-argentina.css') }}">
+    <script defer src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='scripts/carrusel.js') }}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate Logo" class="logo">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#">Posiciones</a></li>
+                <li><a href="#">Copa Libertadores</a></li>
+                <li><a href="#">Fixture</a></li>
+                <li><a href="{{ url_for('copaArgentina') }}">Copa Argentina</a></li>
+                <li><a href="#">Liga Profesional</a></li>
+            </ul>
+            <div class="submenu">
+                <button class="submenu-btn">
+                    <img src="{{ url_for('static', filename='images/red-menu.png') }}" alt="Menú">
+                </button>
+                <ul class="submenu-list">
+                    <li><a style="color: red;" href="#">reserva</a></li>
+                    <li><a style="color: red;" href="#">Contacto</a></li>
+                    <li><a style="color: red;" href="#">Sobre Nosotros</a></li>
+                    <li><a style="color: red;" href="#">Otra Opción</a></li>
+                    <li><a href="#">Otra Opción</a></li>
+                    <li><a href="#">Otra Opción</a></li>
+                    <li><a href="#">Otra Opción</a></li>
+                    <li><a href="#">Otra Opción</a></li>
+                    <li><a href="#">plantel</a></li>
+                    <li><a href="{{ url_for('tablaPosiciones') }}">Tabla de Posiciones</a></li>
+                    <li><a href="#">socios</a></li>
+                    <li><a href="#">hinchas</a></li>
+                    <li><a href="#">declaraciones</a></li>
+                    <li><a href="#">museo</a></li>
+                    <li><a href="#">visita cancha</a></li>
+                    <li><a href="#">Otra Opción</a></li>
+                    <li><a href="#">patrocinadores</a></li>
+                    <li><a href="#">noticias</a></li>
+                    <li><a href="#">Otra Opción</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Contacto</a>
+                <a href="#">Sobre Nosotros</a>
+                <a href="#">Términos y Condiciones</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2025 Fútbol Potrero - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

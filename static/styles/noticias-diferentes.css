@@ -1,0 +1,97 @@
+.noticias-grid-diferentes {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2 columnas, la primera columna ocupa 2 partes, la segunda 1 */
+    gap: 20px;
+    padding: 20px;
+}
+
+.noticia-diferente {
+    position: relative;
+}
+
+.noticia-diferente .imagen-contenedor-diferente {
+    width: 100%;
+    overflow: hidden;
+}
+
+.noticia-diferente img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Noticia grande que ocupa 2 columnas */
+.noticia-diferente.grande {
+    flex: 2;
+    width: 100%;
+}
+
+.noticia-diferente.grande h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+
+/* Contenedor de las 3 noticias pequeñas al lado de la noticia grande */
+.noticias-pequenas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Noticias pequeñas con texto al lado */
+.noticia-diferente.pequena {
+    display: flex;
+    align-items: center;
+}
+
+.noticia-diferente.pequena .imagen-contenedor-diferente {
+    width: 40%;
+    margin-right: 15px;
+}
+
+.noticia-diferente.pequena .contenido-texto {
+    width: 60%;
+}
+
+.noticia-diferente.pequena h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.noticia-diferente.pequena p {
+    font-size: 14px;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .noticias-grid-diferentes {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas más pequeñas */
+    }
+
+    .noticia-diferente.grande {
+        grid-column: span 1; /* Hace que ocupe solo una columna */
+    }
+
+    .noticia-diferente.pequena {
+        flex-direction: column; /* Coloca el texto debajo de la imagen en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .noticia-diferente.pequena .imagen-contenedor-diferente {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .noticia-diferente.pequena .contenido-texto {
+        width: 100%;
+    }
+}

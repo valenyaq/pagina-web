@@ -1,0 +1,133 @@
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general layout */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    width: 100%;  /* Ocupa todo el ancho de la pantalla */
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 1000;
+}
+
+
+
+
+
+.navbar .logo {
+    width: 50px; /* Tamaño reducido del logo */
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    margin-right: auto; /* Alinea las opciones a la izquierda */
+}
+
+.navbar .nav-links li {
+    margin: 0 15px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+
+.navbar .submenu {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+
+.submenu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px; /* Espaciado reducido */
+    border-radius: 5px; /* Bordes redondeados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Tamaño más pequeño */
+    height: 35px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Pequeña sombra para que resalte */
+}
+
+
+.submenu-btn img {
+    width: 30px; /* Reduce el tamaño del icono */
+    height: auto;
+}
+
+.submenu-list {
+    font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
+    text-transform: uppercase; /* Convierte todo el texto en mayúsculas */
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100vw; /* Hace que ocupe todo el ancho de la pantalla */
+    background-color: black;
+    padding: 10px;
+    list-style: none;
+    border-radius: 5px;
+    animation: slideDown 0.3s ease-out;
+    z-index: 10;
+}
+
+.submenu-list.visible {
+    display: grid;
+    width: 100vw;
+}
+
+.submenu-list li {
+    font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
+    text-transform: uppercase; /* Convierte todo el texto en mayúsculas */
+    margin: 2px 0;
+}
+
+.submenu-list li a {
+    font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
+    text-transform: uppercase; /* Convierte todo el texto en mayúsculas */
+    color: white;
+    text-decoration: none;
+    padding: 0; /* Asegúrate de que no haya relleno adicional */
+    font-size: 14px;
+    font-weight: 700; 
+}
+
+
+
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
