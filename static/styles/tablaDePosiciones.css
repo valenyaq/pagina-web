@@ -1,12 +1,43 @@
+.nmb-group {
+    text-align: left;
+    font-size: 10px;
+    font-weight: bold;
+    color: gray;
+}
+
+/* Establecer contenedor principal como flex */
+
+
+.tbp-posc-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre la tabla y las noticias */
+    align-items: flex-start; /* Alineación superior */
+    gap: 20px; /* Espacio entre la tabla y las noticias */
+}
+
+/* Tabla de posiciones */
 #tabla-posiciones {
-    margin: 20px auto;
-    width: 80%;
+    flex: 3; /* Ocupa 3 columnas */
+    width: 55%; /* Ajusta el ancho de la tabla */
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    text-transform: uppercase; /* Todo en mayúsculas */
 }
 
+/* Noticias */
+.not-peq-555 {
+    flex: 1; /* Ocupa 1 columna */
+    width: 30%; /* Ajusta el ancho de las noticias */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+
+}
+
+/* Título */
 h1 {
     text-align: center;
     color: #333;
@@ -19,24 +50,31 @@ table {
     margin-top: 20px;
 }
 
+/* Estilos para celdas tipo "cárcel" pero sutil */
 th, td {
-    padding: 10px;
+    padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Bordes suaves */
+    background-color: rgba(0, 0, 0, 0.02); /* Fondo muy sutil */
+    font-size: 13px;
+    font-weight: 600;
 }
 
+/* Encabezados */
 th {
     background-color: #f2f2f2;
     color: #555;
+    font-weight: bold;
 }
 
+/* Texto de las celdas */
 td {
     color: #333;
 }
 
 /* Imagen del equipo */
 .team-logo {
-    width: 30px;
+    width: 18px;
     height: auto;
     margin-right: 10px;
     vertical-align: middle;
