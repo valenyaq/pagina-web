@@ -131,3 +131,63 @@ body {
     }
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    /* Navbar adjustments for mobile */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .navbar .logo {
+        width: 40px; /* Logo más pequeño en móvil */
+    }
+
+    /* Ocultar el menú de navegación en dispositivos móviles */
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar .nav-links li a {
+        font-size: 14px;
+    }
+
+    /* Mostrar el menú en dispositivos móviles cuando se hace click */
+    .submenu-btn {
+        display: block; /* Botón visible para abrir el menú */
+    }
+
+    .submenu-list {
+        grid-template-columns: repeat(2, 1fr); /* Cambiado a 2 columnas */
+        width: 100%;
+        top: 70px; /* Ajustar la posición del menú desplegable */
+        justify-items: center; /* Centra los elementos en cada columna */
+        gap: 10px; /* Añadir espacio entre los elementos */
+    }
+
+    .submenu-list li a {
+        font-size: 16px; /* Ajustar tamaño de fuente */
+        padding: 10px 0; /* Relleno más grande para enlaces */
+    }
+
+    .submenu-list.visible {
+        display: block; /* Mostrar el menú desplegable */
+    }
+}
+

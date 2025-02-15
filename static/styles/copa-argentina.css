@@ -1,5 +1,4 @@
 /* Estilo para el contenedor del título y el logo */
-/* Estilo para el contenedor del título y el logo */
 .abc-123 {
     display: flex;
     align-items: center;
@@ -25,9 +24,6 @@
     color: #fff; /* Asegurando que el color del título sea blanco */
 }
 
-
-
-
 /* Contenedor principal que incluye partidos y noticias */
 .cp-arg-container {
     display: flex;
@@ -51,41 +47,37 @@
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 10px 15px; /* Mantener el padding para el ancho */
-    border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     height: 50px; /* Hacer más bajo */
     width: 100%;
     max-width: 900px; /* Mantener el ancho de antes */
     margin-bottom: 15px; /* Añadir un espacio entre los partidos */
+    position: relative; /* Para poder centrar el contenedor dentro de este */
 }
 
 /* Equipos */
 .eq-abc-111, .eq-xyz-444 {
-    font-family: 'monsterrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
     color: black;
     display: flex;
-
     align-items: center;
     gap: 10px; /* Espacio entre el logo y el nombre */
-    
 }
 
 /* Para alinear el texto con el centro del logo */
 .eq-abc-111 img, .eq-xyz-444 img {
     vertical-align: middle;
-
 }
-
 
 .eq-xyz-444 {
     flex-direction: row-reverse; /* Esto invierte el orden: nombre primero, luego el logo */
 }
 
 .nmb-eq {
-    font-family: 'monsterrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 600;
@@ -99,28 +91,45 @@
     margin-bottom: 5px;
 }
 
-/* Resultado */
-.rst-def-333 {
+/* Contenedor central para goles y fecha/estado */
+.gol-fecha-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    text-align: center;
+    gap: 10px; /* Espacio entre los tres contenedores dentro */
+    background-color: #f2f2f2; /* Fondo gris clarito */
+    padding: 5px;
+    width: 250px; /* Aumentar el largo del contenedor */
+    height: 50px; /* El mismo alto que el contenedor del partido */
+    position: absolute; /* Posiciona el contenedor dentro del partido */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el contenedor a la posición central */
 }
 
-.goles {
+/* Goles del equipo local (izquierda) */
+.gol-izq, .gol-der {
     font-size: 18px;
-    width: 20px;
-    text-align: center;
+    font-weight: bold;
+    width: 38px;  /* Ajusta el tamaño de la columna de goles */
+    text-align: center; /* Centra los goles */
+    padding: 5px;
 }
 
+/* Fecha y estado (FINAL) */
+.fecha-estado {
+    padding: 5px;
+    text-align: center;
+    min-width: 80px; /* Asegura que la fecha esté centrada */
+}
 
-
+/* Estado (Fecha o FINAL) */
 .estado {
     font-size: 12px;
     color: gray;
-    min-width: 50px;
+    text-align: center;
 }
+
 
 /* Noticias pequeñas */
 .not-peq-555 {
@@ -160,3 +169,115 @@
     color: #555;
     flex: 1; /* Para que el texto ocupe el espacio restante */
 }
+
+@media (max-width: 768px) {
+    /* Ajustar el contenedor del título */
+    .abc-123 {
+        height: 200px; /* Reducir altura en móviles */
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+    }
+
+    .xyz-789 {
+        width: 40px; /* Reducir tamaño del logo */
+    }
+
+    .abc-123 h2 {
+        font-size: 1.5rem; /* Reducir tamaño del título */
+    }
+
+    /* Contenedor principal */
+    .cp-arg-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Contenedor de partidos */
+    .prt-ctr-456 {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 5px; /* Reducir padding en móviles */
+    }
+
+    /* Cada partido */
+    .prt-789 {
+        padding: 8px;
+        height: 45px;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .nmb-eq {
+        font-size: 10px;
+        max-width: 80px; /* Limitar el ancho del nombre */
+        word-break: break-word; /* Romper el texto si es largo */
+        white-space: normal; /* Permitir saltos de línea */
+        overflow-wrap: break-word; /* Asegurar que el texto se ajuste */
+    }
+
+    /* Ajustar el espacio entre los escudos y los nombres */
+    .eq-abc-111, .eq-xyz-444 {
+        font-size: 8px; /* Reducir el tamaño del texto */
+        gap: 3px; /* Reducir espacio entre logo y nombre */
+        display: flex;
+         /* Mantener el orden: escudo - nombre */
+        align-items: center;
+    }
+
+    /* Tamaño de los logos */
+    .logo-eq-222 {
+        width: 16px; /* Hacer los logos más pequeños */
+        height: auto;
+        margin-bottom: 2px;
+    }
+
+    /* Contenedor central de goles y fecha */
+    .gol-fecha-container {
+        width: 90px; /* Reducir ancho */
+        height: 35px; /* Reducir altura */
+        gap: 3px;
+        padding: 2px;
+    }
+
+    /* Goles */
+    .gol-izq, .gol-der {
+        font-size: 12px; /* Reducir tamaño de fuente */
+        width: 25px;
+        padding: 2px;
+    }
+
+    /* Fecha y estado */
+    .fecha-estado {
+        min-width: 50px;
+        font-size: 7px;
+    }
+
+    .estado {
+        font-size: 9px;
+    }
+
+    /* Noticias */
+    .not-peq-555 {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .not-peq-555 h3 {
+        font-size: 1rem;
+    }
+
+    .not-666 {
+        gap: 10px;
+    }
+
+    .not-img-777 {
+        width: 70px; /* Hacer más pequeña la imagen */
+        height: 70px;
+    }
+
+    .not-666 p {
+        font-size: 0.8rem;
+    }
+}
+

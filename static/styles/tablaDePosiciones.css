@@ -79,3 +79,49 @@ td {
     margin-right: 10px;
     vertical-align: middle;
 }
+
+@media (max-width: 768px) {
+    .tbp-posc-container {
+        flex-direction: column;
+        align-items: flex-start; /* Alineación a la izquierda */
+        gap: 5px;
+        width: 100%;
+        padding: 0;
+        margin-left: 0; /* Asegurarse de que no haya margen a la izquierda */
+        overflow-x: hidden; /* Evita el scroll horizontal */
+    }
+
+    #tabla-posiciones {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 8px;
+        margin: 0; /* Eliminar cualquier margen */
+    }
+
+    .not-peq-555 {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 8px;
+    }
+
+    /* Ajustar tamaño de texto y reducir padding */
+    th, td {
+        font-size: 12px; /* Hacemos la fuente más pequeña */
+        padding: 4px; /* Reducimos padding */
+    }
+
+    /* Ocultar columnas GF, GC, DIF en móviles */
+    th:nth-child(7), /* Encabezado GF */
+    th:nth-child(8), /* Encabezado GC */
+    th:nth-child(9), /* Encabezado DIF */
+    td:nth-child(7), /* Datos GF */
+    td:nth-child(8), /* Datos GC */
+    td:nth-child(9)  /* Datos DIF */ {
+        display: none;
+    }
+
+    /* Ajustar logo del equipo */
+    .team-logo {
+        width: 15px; 
+    }
+
+
+}

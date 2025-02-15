@@ -8,8 +8,8 @@
         <h2>Copa Argentina</h2>
 
         <div class="abc-123">
-            <img src="{{ url_for('static', filename='images/CopaArgLogo.png') }}" alt="Copa Argentina Logo" class="xyz-789">
-            <h2>Fixture de la Copa Argentina</h2>
+            <img src="{{ url_for('static', filename='images/liga-arg-logo.webp') }}" alt="Copa Argentina Logo" class="xyz-789">
+            <h2>Tabla de posiciones del futbol argentino</h2>
         </div>
 
         <div class="tbp-posc-container">
@@ -25,6 +25,7 @@
                             <th>Equipo</th>
                             <th>pj</th>
                             <th>pg</th>
+                            <th>pe</th>
                             <th>pp</th>
                             <th>gf</th>
                             <th>gc</th>
@@ -33,201 +34,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for equipo in equipos_a %}
                         <tr>
-                            <td>1</td>
+                            <td>{{ loop.index }}</td>
                             <td>
-                                <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate" class="team-logo">River Plate
+                                <img src="{{ url_for('static', filename=equipo.escudo) }}" alt="{{ equipo.equipo }}" class="team-logo">
+                                {{ equipo.equipo }}
                             </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
+                            <td>{{ equipo.partidos_jugados }}</td>
+                            <td>{{ equipo.partidos_ganados }}</td>
+                            <td>{{ equipo.partidos_empatados }}</td>
+                            <td>{{ equipo.partidos_perdidos }}</td>
+                            <td>{{ equipo.goles_a_favor }}</td>
+                            <td>{{ equipo.goles_en_contra }}</td>
+                            <td>{{ equipo.diferencia_goles }}</td>
+                            <td>{{ equipo.puntos }}</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors" class="team-logo"> Boca Juniors
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/independiente.png') }}" alt="Independiente" class="team-logo"> Independiente
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/san lorenzo.png') }}" alt="San Lorenzo" class="team-logo"> San Lorenzo
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/lanus.png') }}" alt="Lanús" class="team-logo"> Lanús
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/velez.png') }}" alt="Vélez Sarsfield" class="team-logo"> Vélez Sarsfield
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/racing.png') }}" alt="Racing Club" class="team-logo"> Racing Club
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/defensa-justicia.png') }}" alt="Defensa y Justicia" class="team-logo"> Defensa y Justicia
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/talleres.png') }}" alt="Talleres" class="team-logo"> Talleres
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/argentinos-juniors.png') }}" alt="Argentinos Juniors" class="team-logo"> Argentinos Juniors
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/estudiantes.png') }}" alt="Estudiantes" class="team-logo"> Estudiantes
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/rosario-central.png') }}" alt="Rosario Central" class="team-logo"> Rosario Central
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/gimnasia.png') }}" alt="Gimnasia y Esgrima" class="team-logo"> Gimnasia y Esgrima
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/sarmiento.png') }}" alt="Sarmiento" class="team-logo"> Sarmiento
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/huracan.png') }}" alt="Platense" class="team-logo"> Platense
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
                 
@@ -242,6 +65,7 @@
                             <th>Equipo</th>
                             <th>pj</th>
                             <th>pg</th>
+                            <th>pe</th>
                             <th>pp</th>
                             <th>gf</th>
                             <th>gc</th>
@@ -250,201 +74,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for equipo in equipos_b %}
                         <tr>
-                            <td>1</td>
+                            <td>{{ loop.index }}</td>
                             <td>
-                                <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate" class="team-logo">River Plate
+                                <img src="{{ url_for('static', filename=equipo.escudo) }}" alt="{{ equipo.equipo }}" class="team-logo">
+                                {{ equipo.equipo }}
                             </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
+                            <td>{{ equipo.partidos_jugados }}</td>
+                            <td>{{ equipo.partidos_ganados }}</td>
+                            <td>{{ equipo.partidos_empatados }}</td>
+                            <td>{{ equipo.partidos_perdidos }}</td>
+                            <td>{{ equipo.goles_a_favor }}</td>
+                            <td>{{ equipo.goles_en_contra }}</td>
+                            <td>{{ equipo.diferencia_goles }}</td>
+                            <td>{{ equipo.puntos }}</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/boca-juniors.png') }}" alt="Boca Juniors" class="team-logo"> Boca Juniors
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/independiente.png') }}" alt="Independiente" class="team-logo"> Independiente
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/san-lorenzo.png') }}" alt="San Lorenzo" class="team-logo"> San Lorenzo
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/lanus.png') }}" alt="Lanús" class="team-logo"> Lanús
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/veles-sarsfield.png') }}" alt="Vélez Sarsfield" class="team-logo"> Vélez Sarsfield
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/racing-club.png') }}" alt="Racing Club" class="team-logo"> Racing Club
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/defensa-justicia.png') }}" alt="Defensa y Justicia" class="team-logo"> Defensa y Justicia
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/talleres.png') }}" alt="Talleres" class="team-logo"> Talleres
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/argentinos-juniors.png') }}" alt="Argentinos Juniors" class="team-logo"> Argentinos Juniors
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/estudiantes.png') }}" alt="Estudiantes" class="team-logo"> Estudiantes
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/rosario-central.png') }}" alt="Rosario Central" class="team-logo"> Rosario Central
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/gimnasia.png') }}" alt="Gimnasia y Esgrima" class="team-logo"> Gimnasia y Esgrima
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/sarmiento.png') }}" alt="Sarmiento" class="team-logo"> Sarmiento
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>
-                                <img src="{{ url_for('static', filename='images/platense.png') }}" alt="Platense" class="team-logo"> Platense
-                            </td>
-                            <td>45</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>+30</td>
-                            <td>20</td>
-                            <td>20</td>
-                            <td>20</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
                 

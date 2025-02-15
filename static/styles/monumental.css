@@ -42,3 +42,20 @@
     background-color: rgba(255, 255, 255, 0.8);
     opacity: 0.9;
 }
+
+
+@media (max-width: 768px) {
+    .hero {
+        height: 40vh; /* Reduce la altura en móviles */
+    }
+
+    .imagen-monumental img {
+        object-position: center top; /* Ajusta la imagen para que se vea bien */
+    }
+
+    .btn-ver-estadio {
+        bottom: 10px; /* Sube un poco el botón */
+        font-size: 12px; /* Reduce el tamaño del texto */
+        padding: 8px 15px; /* Menos padding */
+    }
+}

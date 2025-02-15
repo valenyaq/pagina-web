@@ -73,3 +73,41 @@
     padding: 20px;
     min-height: 400px; /* Ajusta este valor para más altura */
 }
+
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .noticias-personalizadas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .noticia-personalizada.grande {
+        max-width: 90%;
+    }
+
+    .noticia-personalizada-mediana {
+        max-width: 90%;
+    }
+
+    .noticia-personalizada-pequena {
+        max-width: 90%;
+    }
+
+    .noticia-personalizada.grande .noticia-personalizada-texto {
+        font-size: 30px; /* Reducir tamaño de texto para pantallas pequeñas */
+    }
+}
+
+/* Media query para pantallas muy pequeñas (como móviles en modo vertical) */
+@media (max-width: 480px) {
+    .noticia-personalizada.grande .noticia-personalizada-texto {
+        font-size: 24px; /* Reducir aún más el tamaño del texto */
+        padding: 8px 10px;
+    }
+
+    .noticia-custom-texto-bloque {
+        padding: 10px;
+        min-height: 250px; /* Reducir el tamaño para móviles pequeños */
+    }
+}

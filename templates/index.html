@@ -33,40 +33,62 @@
             </article>
         </div>
 
-        <!-- Próximos Partidos -->
-        <section class="proximos-partidos">
+        <section class="proximos-partidos-container">
             <h2>Próximos Partidos</h2>
-            <div class="partido">
-                <div class="partido-info">
-                    <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate" class="escudo-peq">
-                    <span>River Plate vs Boca Juniors</span>
-                    <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors" class="escudo-peq">
-                </div>
-                <div class="partido-horario-lugar">
-                    <span>Domingo 20:00 - Monumental</span>
+            <div class="carrusel-proximos">
+                <div class="proximos-partidos">
+                    {% for partido in proximos_partidos %}
+                        <div class="partido">
+                            <!-- Contenedor equipo local -->
+                            <div class="escu-esq-{{ partido.equipo_local }}">
+                                <!-- Escudo del equipo local -->
+                                <img src="{{ url_for('static', filename=partido.escudo_local) }}" alt="{{ partido.equipo_local }} Logo" class="logo-eq">
+                                <p class="nmb-eqq">{{ partido.equipo_local }}</p>
+                            </div>
+        
+                            <!-- Contenedor central para competición, fecha y hora -->
+                            <div class="partido-info">
+                                <div class="comp-4">
+                                    <span>{{ partido.competicion }}</span>
+                                </div>
+            
+                                <div class="partido-fecha">
+                                    <span>
+                                        {% if partido.fecha_hora < ahora %}
+                                            FINAL
+                                        {% else %}
+                                            {{ partido.fecha }} - {{ partido.hora }}
+                                        {% endif %}
+                                    </span>
+                                </div>
+                            </div>
+            
+                            <!-- Contenedor equipo visitante -->
+                            <div class="escu-esq-{{ partido.equipo_visitante }}">
+                                <!-- Escudo del equipo visitante -->
+                                <img src="{{ url_for('static', filename=partido.escudo_visitante) }}" alt="{{ partido.equipo_visitante }} Logo" class="logo-eq">
+                                <p class="nmb-eqq">{{ partido.equipo_visitante }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
-            <div class="partido">
-                <div class="partido-info">
-                    <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate" class="escudo-peq">
-                    <span>River Plate vs Racing</span>
-                    <img src="{{ url_for('static', filename='images/river.png') }}" alt="Racing Club" class="escudo-peq">
-                </div>
-                <div class="partido-horario-lugar">
-                    <span>Miércoles 21:30 - Cilindro</span>
-                </div>
-            </div>
-            <div class="partido">
-                <div class="partido-info">
-                    <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate" class="escudo-peq">
-                    <span>River Plate vs Independiente</span>
-                    <img src="{{ url_for('static', filename='images/independiente.png') }}" alt="Independiente" class="escudo-peq">
-                </div>
-                <div class="partido-horario-lugar">
-                    <span>Sábado 18:00 - Monumental</span>
-                </div>
+        
+            <!-- Contenedor para los botones de navegación -->
+            <div class="boton-navegacion">
+                <button class="prev-btn partidos-btn">&#10094;</button> <!-- Flecha izquierda -->
+                <button class="next-btn partidos-btn">&#10095;</button> <!-- Flecha derecha -->
             </div>
         </section>
+        
+        
+        
+
+        <!-- Próximos Partidos -->
+        
+        
+        
+        
 
         <div class="fila-noticias">
             <article class="noticia">

@@ -15,116 +15,56 @@
             <!-- Contenedor de partidos -->
             <div class="prt-ctr-456">
                 <!-- Partido 1 -->
+                {% for partido in partidos_copa_argentina %}
                 <div class="prt-789">
                     <div class="eq-abc-111">
-                        <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate Logo" class="logo-eq-222">
-                        <p class="nmb-eq">River Plate</p>
+                        <!-- Escudo del equipo local -->
+                        <img src="{{ url_for('static', filename=partido.escudo_local) }}" alt="{{ partido.equipo_local }} Logo" class="logo-eq-222">
+                        <p class="nmb-eq">{{ partido.equipo_local }}</p>
                     </div>
-                    <div class="rst-def-333">
-                        <span class="goles izquierda">2</span>
-                        <span class="estado">FINAL</span> 
-                        <span class="goles derecha">1</span>
+        
+                    <!-- Contenedor central para goles y fecha/estado -->
+                    <div class="gol-fecha-container">
+                        <!-- Contenedor para goles del equipo local -->
+                        <div class="gol-izq">
+                            {% if partido.goles_local is not none %}
+                                {{ partido.goles_local }}
+                            {% else %}
+                                - <!-- O puedes poner un guion si prefieres -->
+                            {% endif %}
+                        </div>
+        
+                        <!-- Contenedor de fecha o estado (FINAL) -->
+                        <div class="fecha-estado">
+                            <span class="estado">
+                                {% if partido.fecha_hora < ahora %}
+                                    FINAL
+                                {% else %}
+                                    {{ partido.fecha }} - {{ partido.hora }}
+                                {% endif %}
+                            </span>
+                        </div>
+        
+                        <!-- Contenedor para goles del equipo visitante -->
+                        <div class="gol-der">
+                            {% if partido.goles_visitante is not none %}
+                                {{ partido.goles_visitante }}
+                            {% else %}
+                                - <!-- O puedes poner un guion si prefieres -->
+                            {% endif %}
+                        </div>
                     </div>
+        
                     <div class="eq-xyz-444">
-                        <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors Logo" class="logo-eq-222">
-                        <p class="nmb-eq">Boca Juniors</p>
+                        <!-- Escudo del equipo visitante -->
+                        <img src="{{ url_for('static', filename=partido.escudo_visitante) }}" alt="{{ partido.equipo_visitante }} Logo" class="logo-eq-222">
+                        <p class="nmb-eq">{{ partido.equipo_visitante }}</p>
                     </div>
                 </div>
-                
-                <!-- Partido 2 -->
-                <div class="prt-789">
-                    <div class="eq-abc-111">
-                        <img src="{{ url_for('static', filename='images/racing.png') }}" alt="Racing Club Logo" class="logo-eq-222">
-                        <p>Racing Club</p>
-                    </div>
-                    <div class="rst-def-333">
-                        <span>1 - 1</span>
-                    </div>
-                    <div class="eq-xyz-444">
-                        <img src="{{ url_for('static', filename='images/independiente.png') }}" alt="Independiente Logo" class="logo-eq-222">
-                        <p>Independiente</p>
-                    </div>
-                </div>
-                <div class="prt-789">
-                    <div class="eq-abc-111">
-                        <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate Logo" class="logo-eq-222">
-                        <p>River Plate</p>
-                    </div>
-                    <div class="rst-def-333">
-                        <span>2 - 1</span>
-                    </div>
-                    <div class="eq-xyz-444">
-                        <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors Logo" class="logo-eq-222">
-                        <p>Boca Juniors</p>
-                    </div>
-                </div>
-                <div class="prt-789">
-                    <div class="eq-abc-111">
-                        <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate Logo" class="logo-eq-222">
-                        <p>River Plate</p>
-                    </div>
-                    <div class="rst-def-333">
-                        <span>2 - 1</span>
-                    </div>
-                    <div class="eq-xyz-444">
-                        <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors Logo" class="logo-eq-222">
-                        <p>Boca Juniors</p>
-                    </div>
-                </div>
-                <div class="prt-789">
-                    <div class="eq-abc-111">
-                        <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate Logo" class="logo-eq-222">
-                        <p>River Plate</p>
-                    </div>
-                    <div class="rst-def-333">
-                        <span>2 - 1</span>
-                    </div>
-                    <div class="eq-xyz-444">
-                        <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors Logo" class="logo-eq-222">
-                        <p>Boca Juniors</p>
-                    </div>
-                </div>
-                <div class="prt-789">
-                    <div class="eq-abc-111">
-                        <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate Logo" class="logo-eq-222">
-                        <p>River Plate</p>
-                    </div>
-                    <div class="rst-def-333">
-                        <span>2 - 1</span>
-                    </div>
-                    <div class="eq-xyz-444">
-                        <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors Logo" class="logo-eq-222">
-                        <p>Boca Juniors</p>
-                    </div>
-                </div>
-                <div class="prt-789">
-                    <div class="eq-abc-111">
-                        <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate Logo" class="logo-eq-222">
-                        <p>River Plate</p>
-                    </div>
-                    <div class="rst-def-333">
-                        <span>2 - 1</span>
-                    </div>
-                    <div class="eq-xyz-444">
-                        <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors Logo" class="logo-eq-222">
-                        <p>Boca Juniors</p>
-                    </div>
-                </div>
-                <div class="prt-789">
-                    <div class="eq-abc-111">
-                        <img src="{{ url_for('static', filename='images/river.png') }}" alt="River Plate Logo" class="logo-eq-222">
-                        <p>River Plate</p>
-                    </div>
-                    <div class="rst-def-333">
-                        <span>2 - 1</span>
-                    </div>
-                    <div class="eq-xyz-444">
-                        <img src="{{ url_for('static', filename='images/boca.png') }}" alt="Boca Juniors Logo" class="logo-eq-222">
-                        <p>Boca Juniors</p>
-                    </div>
-                </div>
-                <!-- Más partidos aquí -->
+                {% endfor %}
             </div>
+        
+            
             
             <!-- Noticias pequeñas a la derecha -->
             <div class="not-peq-555">

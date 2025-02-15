@@ -1,61 +1,139 @@
-/* Próximos Partidos */
-.proximos-partidos {
-    display: flex;
-    justify-content: space-around; /* Distribuye los partidos equitativamente en la fila */
-    gap: 20px; /* Espacio entre los partidos */
-    margin-top: 30px;
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    flex-wrap: wrap; /* Permite que los partidos se envuelvan si no caben en la pantalla */
-}
-
-.proximos-partidos h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%; /* Asegura que el título esté centrado */
-}
-
-/* Contenedor de cada partido */
-.partido {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 30%; /* Ajusta el ancho de cada partido */
+/* Contenedor principal */
+.proximos-partidos-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Título "Próximos Partidos" */
+.proximos-partidos-container h2 {
+    font-size: 20px;  /* Reducir tamaño del título */
+    font-weight: bold;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-/* Información del partido */
-.partido-info {
+/* Contenedor para los botones de navegación (mantenerlos al lado del carrusel) */
+.boton-navegacion {
+    position: absolute;
+    top: 50%;
+    left: 0;  /* Ubicamos los botones a la izquierda */
+    right: 0; /* Aseguramos que los botones ocupen todo el ancho */
     display: flex;
-    justify-content: space-between; /* Espacio entre los escudos */
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 100%;
+}
+
+/* Carrusel de partidos */
+.carrusel-proximos {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Contenedor de los partidos */
+.proximos-partidos {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+/* Estilo de cada partido */
+.partido {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    margin-bottom: 10px;
-    width: 100%; /* Asegura que ocupe el ancho del contenedor */
-}
-
-.partido-info img {
-    width: 40px;
-    height: auto;
-}
-
-.partido-horario-lugar {
+    justify-content: space-between;
     text-align: center;
+    margin-bottom: 10px;
+    height: 120px;
 }
 
-.escudo-peq {
-    width: 30px;
-    height: auto;
+/* Competición más arriba y con fuente más pequeña */
+.comp-4 {
+    font-size: 13px;  /* Reducir tamaño de la fuente */
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 3px;  /* Asegura que el texto quede alineado a la izquierda */
 }
 
-/* Asegurarse de que los partidos no se amontonen en pantallas pequeñas */
+/* Fecha centrada */
+.partido-fecha {
+    font-size: 10px;  /* Reducir tamaño de la fuente */
+    font-weight: normal;
+    color: #333;
+    margin: 0 10px;
+    text-align: center; /* Centrado de la fecha */
+}
+
+/* Estilo para los escudos */
+.logo-eq {
+    width: 30px;  /* Controlar el tamaño */
+    height: 30px;  /* Asegurarse de que la altura también esté controlada */
+    margin-bottom: 3px;
+}
+
+/* Contenedor de los equipos (local y visitante) */
+
+/* Nombre de los equipos debajo del escudo */
+.nmb-eqq {
+    font-size: 11px;  /* Reducir tamaño de la fuente */
+    font-weight: bold;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Estilo de los botones de navegación */
+.partidos-btn {
+    background: none;
+    border: none;
+    font-size: 25px;  /* Reducir tamaño de la fuente de los botones */
+    color: #333;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+/* Flecha izquierda */
+.prev-btn {
+    position: absolute;
+    left: -40px;
+}
+
+/* Flecha derecha */
+.next-btn {
+    position: absolute;
+    right: -40px;
+}
+
 @media (max-width: 768px) {
+    .proximos-partidos-container {
+        width: 100%;  /* Aseguramos que ocupe todo el ancho del dispositivo */
+    }
+
     .partido {
-        width: 45%; /* Ajusta el ancho en pantallas pequeñas */
+        flex: 0 0 100%;  /* Solo mostrar un partido a la vez */
+    }
+
+    .carrusel-proximos {
+        overflow-x: scroll;  /* Habilitar scroll horizontal en pantallas pequeñas */
+        -webkit-overflow-scrolling: touch;  /* Mejor desplazamiento en dispositivos iOS */
+    }
+
+    .boton-navegacion {
+        display: none;  /* Esconde los botones en pantallas pequeñas */
     }
 }

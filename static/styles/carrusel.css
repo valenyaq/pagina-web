@@ -89,3 +89,34 @@
     padding: 10px;
     font-weight: bold;
 }
+
+
+@media (max-width: 768px) {
+    .carrusel-slide {
+        min-width: 50%; /* Se muestran 2 en tablet */
+        padding: 5px; /* Reduce el padding */
+    }
+
+    @media (max-width: 480px) {
+        .carrusel-slide {
+            min-width: 100%; /* Solo 1 en pantallas chicas */
+        }
+    }
+
+    /* Hace que la entrevista dentro del recuadro sea más chica */
+    .carrusel-slide img {
+        width: 70%; /* Reduce el tamaño de la imagen */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    .carrusel-texto {
+        font-size: 12px; /* Reduce el tamaño del texto */
+        padding: 5px; /* Reduce padding del texto */
+    }
+
+    /* Ajusta el contenedor para que no ocupe todo el recuadro */
+    .carrusel-slide .entrevista {
+        max-width: 60%; /* Reduce el ancho máximo */
+        margin: 0 auto; /* Centra el contenido */
+    }
+}
