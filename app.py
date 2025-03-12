@@ -10,10 +10,10 @@ app = Flask(__name__)
 
 
 #### conexion a base de datos ##
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'  # Reemplazá con tu usuario de MySQL
-app.config['MYSQL_PASSWORD'] = 'root'  # Reemplazá con tu contraseña de MySQL
-app.config['MYSQL_DB'] = 'pagina_river'
+app.config['MYSQL_HOST'] = 'sql207.infinityfree.com'
+app.config['MYSQL_USER'] = 'if0_38505876'  # Reemplazá con tu usuario de MySQL
+app.config['MYSQL_PASSWORD'] = 'pepycarp0'  # Reemplazá con tu contraseña de MySQL
+app.config['MYSQL_DB'] = 'if0_38505876_pagina_rivers'
 
 mysql = MySQL(app)
 
